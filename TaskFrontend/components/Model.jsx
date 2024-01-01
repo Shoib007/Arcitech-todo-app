@@ -3,14 +3,15 @@ import { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../Context/UserContext';
 import api from '../utils/axiosinstance';
 
+
+// Add Task Model ..................................................................................
+
 function ModelComponent() {
     const { openModal, setOpenModal, setTasks, editing, setEditing, taskId } = useContext(UserContext);
 
     const [taskData, setTaskData] = useState({
         title: "", description: "", status: "PENDING"
     });
-
-    console.log(taskData);
 
     function onCloseModal() {
         setOpenModal(false);
@@ -155,6 +156,11 @@ function ModelComponent() {
 export default ModelComponent;
 
 
+
+//
+// Confirmation Popup Model .................................................
+//
+
 export const ConfirmationModel = () => {
     const { modelDel, setModelDel, taskId, setTasks } = useContext(UserContext);
 
@@ -199,14 +205,18 @@ export const ConfirmationModel = () => {
 }
 
 
+
+//
+// Edit Poppu Model
+//
+
+
 export function EditingModel() {
     const { setTasks, taskId, editingModel, setEditingModel } = useContext(UserContext);
 
     const [taskData, setTaskData] = useState({
         title: "", description: "", status: "PENDING"
     });
-
-    console.log(taskData);
 
     function onCloseModal() {
         setEditingModel(false);

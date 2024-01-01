@@ -11,8 +11,6 @@ const Login = () => {
     });
     const {setUserInfo, setIsAuthenticated} = useContext(UserContext);
     const redirect = useNavigate();
-
-    console.log(LoginDetail);
     
     const handleForm = (e) => {
         setLoginDetail({
