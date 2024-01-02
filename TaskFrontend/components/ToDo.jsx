@@ -3,12 +3,13 @@ import { MdDeleteForever } from "react-icons/md";
 import { TiPencil } from "react-icons/ti";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../Context/UserContext";
+import {useNavigate} from 'react-router-dom'
 import api from "../utils/axiosinstance";
 import ModelComponent, { ConfirmationModel, EditingModel } from "./Model";
 
 const ToDo = () => {
     const { userInfo, isAuthenticated, setOpenModal, tasks, setTasks, setModelDel, setTaskId, taskId, setEditingModel } = useContext(UserContext);
-
+    const redirect = useNavigate();
 
     const handleDeleteModel = (id) => {
         setTaskId(id);
@@ -36,6 +37,9 @@ const ToDo = () => {
     }
 
     useEffect(() => {
+        if(!isAuthenticated){
+            redirect("/login");
+        }
         FetchTasks();
     }, [])
 

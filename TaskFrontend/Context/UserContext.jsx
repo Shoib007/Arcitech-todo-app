@@ -5,7 +5,7 @@ export const UserContext = createContext(null);
 const UserContextProvider = ({children}) => {
     const [isLoadig, setIsLoading] = useState(false);
     const [userInfo, setUserInfo] = useState({});
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('access_token') ? true : false);
     const [openModal, setOpenModal] = useState(false);
     const [modelDel, setModelDel] = useState(false);
     const [tasks, setTasks] = useState([])

@@ -36,3 +36,9 @@ VITE_BASE_URL = https://localhost:8000
 ```
 npm run dev
 ```
+#### Go /login to login
+
+```
+username : shoib@gmail.com
+password : 1234
+```
