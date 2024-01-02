@@ -25,10 +25,14 @@ python3 manage.py runserver
 ```
 cd TaskFrontend
 npm i
-npm run dev
 ```
 
 ### Create .env file under TaskFrontend folder
 ```
 VITE_BASE_URL = https://localhost:8000
+```
+
+### Run the Server
+```
+npm run dev
 ```
